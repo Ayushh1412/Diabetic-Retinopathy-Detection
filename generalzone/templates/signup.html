@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+	{% load static %}
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet'>
+	<title>Diabetic Retinopathy</title>
+	<style>
+		*{
+			margin: 0;
+		}
+		body{
+			/*background: linear-gradient(to top right, #6600ff 0%, #ff99cc 100%);*/
+			height: fit-content;
+			font-family: 'Rubik';
+			border: 1px solid transparent; box-sizing: border-box;
+			padding-bottom: 50px;
+		}
+		.header{
+			height: 50px;
+			width: 100%;
+			line-height: 50px;
+			padding: 0 10%;
+			box-sizing: border-box;
+			font-size: 30px;
+			font-weight: bolder;
+			position: fixed;
+			/*background-color: purple;*/
+			/*box-shadow: 1px 1px purple;*/
+			/*box-shadow: 20px 20px 50px 10px pink inset;*/
+			box-shadow: 1px 1px 20px 1px #ff99cc;
+			background-color: white;
+			z-index: 10;
+		}
+		ul{
+			list-style-type: none;
+			width: fit-content;
+			float: right;
+			/*margin-right: 50px;*/
+		}
+		li{
+			font-size: 20px;
+			display: inline-block;
+			width: fit-content;
+			margin-left: 20px;
+		}
+		li a{
+			text-decoration: none;
+			color: black;
+		}
+		.body{
+			/*height: fit-content;*/
+			height: fit-content;
+			width: 80%;
+			margin: 0px auto;
+			margin-top: 80px;
+			/* background-color: whitesmoke; */
+			box-shadow: 1px 1px 20px 1px #00000033;
+			position: relative;
+			font-size: 20px;
+			padding: 5%;
+			box-sizing: border-box;
+		}
+        .section-1{
+            width: 80%;
+            height: 480px;
+            /* background-color: #ff99cc; */
+            margin: 0px auto;
+        }
+        .col{
+            width: 50%;
+            /* background-color: aqua; */
+            height: 100%;
+            float: left;
+            text-align: center;
+            line-height: 40px;
+        }
+        .active{
+            background-color: aqua;
+			color: white;
+            border-radius: 25px;
+            width: 90%;
+            margin: 0 auto;
+            height: 40px;
+            background: linear-gradient(to top right, #6600ff 0%, #ff99cc 100%);
+        }
+        .form-container{
+				height: fit-content;
+				width: 100%;
+				margin: 0px auto;
+				/* border: 1px solid; */
+				/* padding: 5%; */
+				/* padding-left: 0; */
+				box-sizing: border-box;
+				/* background-color: yellow; */
+			}
+			.input-field{
+				position: relative;
+				padding: 0;
+				height: 30px;
+				width: 90%;
+				margin-left: 5%;
+                /* margin: 0 auto; */
+				box-sizing: border-box;
+			}
+			.input-field{
+                margin: 0 auto;
+				margin-top: 50px;
+			}
+			input, textarea, select{
+				outline: none;
+				border: none;
+				width: 100%;
+				height: 100%;
+				border-bottom: 1px solid #3fc;
+				position: relative;
+				padding-left: 0;
+				margin-left: 0;
+				font-size: 18px;
+			}
+			input:focus{
+				border-bottom: 2px solid #3fc;
+			}
+			label{
+				position: absolute;
+				/* width: 100%; */
+				/* height: 100%; */
+				left: 0;
+				top: 0;
+				transition: all 0.3s;
+				/* background-color: yellowgreen; */
+			}
+			input:focus ~ label,
+			.input-has-val ~ label,
+			textarea:focus ~ label,
+			select:focus ~ label{
+				left: 0;
+				font-size: 12px;
+				top: -20px;
+			}
+			.btn{
+				background-color: #3fc;
+				border-radius: 20px;
+				width: 150px;
+                height: 35px;
+                margin: 0 auto;
+				text-align: center;
+				cursor: pointer;
+				/* box-sizing: content-box; */
+				display: block;
+				/* margin: 10px auto; */
+			}
+			#img-label {
+				background: linear-gradient(to top right, #6600ff 0%, #ff99cc 100%);
+				color: white;
+				padding: 0.2rem;
+				/* font-family: sans-serif; */
+				border-radius: 0.3rem;
+				cursor: pointer;
+				/* margin-top: 1rem; */
+				font-size: 18px;
+				border-radius: 25px;
+				height: 100%;
+				/* box-sizing: border-box; */
+				line-height: 30px;
+			}
+			#file-chosen{
+				height: 100%;
+				line-height: 30px;
+				margin-top: 0;
+			}
+	</style>
+</head>
+<body>
+	<!-- <div class="header"></div> -->
+	<div class="header">
+		Diabetic Retinopathy
+		<ul>
+			<li><a href="{% url 'generalzone:index' %}">Home</a></li>
+			<li><a href="{% url 'generalzone:about' %}">About</a></li>
+			<li><a href="{% url 'generalzone:treatment' %}">Treatment</a></li>
+			<li><a href="{% url 'generalzone:project' %}">Project</a></li>
+			<li><a href="{% url 'generalzone:login' %}">Login</a></li>
+		</ul>
+	</div>
+	<div class="body">
+        <!-- <div class="row" style="height: 40px;">
+            <div class="col active">Login</div>
+        </div> -->
+        <div class="section-1">
+            <div class="col">
+                <div class="active">Login</div>
+                <div class="form-container">
+                    <form action="{% url 'generalzone:createUser' %}" method="POST" enctype="multipart/form-data">
+						{% csrf_token %}
+                        <div class="input-field">
+                            <input id="name" type="name" class="validate" name="name">
+                            <label for="name">Name</label>
+                        </div>
+						<div class="input-field">
+                            <input id="contact" type="tel" class="validate" name="contact">
+                            <label for="contact">Contact</label>
+                        </div>
+                        <div class="input-field">
+                            <input id="email" type="email" class="validate" name="email" autocomplete="off" style="padding-left: 4rem;">
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="input-field">
+                            <input id="password" type="password" class="validate" name="password" autocomplete="off" style="padding-left: 6rem;">
+                            <label for="password">Password</label>
+                        </div>
+						<div class="input-field">
+                            <input type="file" id="actual-btn" name="image" hidden/>
+
+							<!-- our custom upload button -->
+							<label for="actual-btn" id='img-label'>Choose File</label>
+					
+							<!-- name of file chosen -->
+							<span id="file-chosen">No file chosen</span>
+                        </div>
+                        <div class="input-field">	
+                            <input type="submit" value="Submit" class="btn">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col" style="position: relative;">
+				<img src="{% static '/images/download.jpg' %}" alt="" style="max-width: 100%; max-height: 100%; position: absolute; left: 0; right: 0; top: 0; bottom: 0; margin: auto;">
+			</div>
+        </div>
+        
+	</div>
+	<script>
+		
+		const inp = document.querySelectorAll('.validate');
+		inp.forEach(item => {
+			item.addEventListener('change', ()=>{
+				if(item.value != ''){
+					item.classList.add('input-has-val');
+				}else{
+					item.classList.remove('input-has-val');
+				}
+			})
+		});
+		const actualBtn = document.getElementById('actual-btn');
+
+		const fileChosen = document.getElementById('file-chosen');
+
+		actualBtn.addEventListener('change', function(){
+			fileChosen.textContent = this.files[0].name;
+		})
+	</script>
+</body>
+</html>
+

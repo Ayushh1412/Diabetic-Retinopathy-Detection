@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet'>
+	<title>Diabetic Retinopathy</title>
+	<style>
+		*{
+			margin: 0;
+		}
+		body{
+			/*background: linear-gradient(to top right, #6600ff 0%, #ff99cc 100%);*/
+			height: fit-content;
+			font-family: 'Rubik';
+			border: 1px solid transparent; box-sizing: border-box;
+		}
+		.header{
+			height: 50px;
+			width: 100%;
+			line-height: 50px;
+			padding: 0 10%;
+			box-sizing: border-box;
+			font-size: 30px;
+			font-weight: bolder;
+			position: fixed;
+			/*background-color: purple;*/
+			/*box-shadow: 1px 1px purple;*/
+			/*box-shadow: 20px 20px 50px 10px pink inset;*/
+			box-shadow: 1px 1px 20px 1px #ff99cc;
+			background-color: white;
+			z-index: 10;
+		}
+		ul{
+			list-style-type: none;
+			width: fit-content;
+			float: right;
+			/*margin-right: 50px;*/
+		}
+		li{
+			font-size: 20px;
+			display: inline-block;
+			width: fit-content;
+			margin-left: 20px;
+		}
+		li a{
+			text-decoration: none;
+			color: black;
+		}
+		.body{
+			/*height: fit-content;*/
+			height: fit-content;
+			width: 80%;
+			margin: 0px auto;
+			margin-top: 80px;
+			background-color: whitesmoke;
+			box-shadow: 1px 1px 20px 1px #00000033;
+			position: relative;
+			font-size: 20px;
+			padding: 5%;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<!-- <div class="header"></div> -->
+	<div class="header">
+		Diabetic Retinopathy
+		<ul>
+			<li><a href="{% url 'generalzone:index' %}">Home</a></li>
+			<li><a href="{% url 'generalzone:about' %}">About</a></li>
+			<li><a href="{% url 'generalzone:treatment' %}">Treatment</a></li>
+			<li><a href="{% url 'generalzone:project' %}">Project</a></li>
+			<li><a href="{% url 'generalzone:login' %}">Login</a></li>
+		</ul>
+	</div>
+	<div class="body">
+		<h2>What is diabetic retinopathy ?</h2>
+		<br>
+		Diabetic retinopathy is an eye condition that can cause vision loss and blindness in people who have diabetes. It affects blood vessels in the retina (the light-sensitive layer of tissue in the back of your eye).
+		<br><br>
+		If you have diabetes, it’s important to get a comprehensive dilated eye exam at least once a year. Diabetic retinopathy may not have any symptoms at first — but finding it early can help you take steps to protect your vision. 
+		<br><br>
+		Managing your diabetes — by staying physically active, eating healthy, and taking your medicine — can also help you prevent or delay vision loss.  
+	</div>
+</body>
+</html>
+

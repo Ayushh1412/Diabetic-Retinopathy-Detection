@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet'>
+	<title>Diabetic Retinopathy</title>
+	<style>
+		*{
+			margin: 0;
+		}
+		body{
+			/*background: linear-gradient(to top right, #6600ff 0%, #ff99cc 100%);*/
+			height: fit-content;
+			font-family: 'Rubik';
+			border: 1px solid transparent; box-sizing: border-box;
+		}
+		.header{
+			height: 50px;
+			width: 100%;
+			line-height: 50px;
+			padding: 0 10%;
+			box-sizing: border-box;
+			font-size: 30px;
+			font-weight: bolder;
+			position: fixed;
+			/*background-color: purple;*/
+			/*box-shadow: 1px 1px purple;*/
+			/*box-shadow: 20px 20px 50px 10px pink inset;*/
+			box-shadow: 1px 1px 20px 1px #ff99cc;
+			background-color: white;
+			z-index: 10;
+		}
+		ul{
+			list-style-type: none;
+			width: fit-content;
+			float: right;
+			/*margin-right: 50px;*/
+		}
+		li{
+			font-size: 20px;
+			display: inline-block;
+			width: fit-content;
+			margin-left: 20px;
+		}
+		li a{
+			text-decoration: none;
+			color: black;
+		}
+		.body{
+			/*height: fit-content;*/
+			height: fit-content;
+			width: 80%;
+			margin: 0px auto;
+			margin-top: 80px;
+			background-color: whitesmoke;
+			box-shadow: 1px 1px 20px 1px #00000033;
+			position: relative;
+			font-size: 20px;
+			line-height: 30px;
+			padding: 5%;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<!-- <div class="header"></div> -->
+	<div class="header">
+		Diabetic Retinopathy
+		<ul>
+			<li><a href="{% url 'generalzone:index' %}">Home</a></li>
+			<li><a href="{% url 'generalzone:about' %}">About</a></li>
+			<li><a href="{% url 'generalzone:treatment' %}">Treatment</a></li>
+			<li><a href="{% url 'generalzone:project' %}">Project</a></li>
+			<li><a href="{% url 'generalzone:login' %}">Login</a></li>
+		</ul>
+	</div>
+	<div class="body">
+		<h2> What is Convolutional Neural Network (CNN)?</h2>
+		<br>
+		A Convolutional Neural Network (Conv Net/CNN) is a type of Artificial Neural Network used in Image Recognition & processing i.e., specifically designed to process pixel data.
+		<br><br>
+		The main advantage of CNN compared to its Predecessors is that it automatically detects the important features without any human supervision. 
+		<br><br>
+		For example, given many pictures of cats & dogs it learns distinctive features of each class by itself. CNN is Computationally Efficient. 
+		<br><br>
+		<h2>Convolutional</h2>
+		<br>
+		<span style="width: 100px;display: inline-block;"></span> In a CNN, the input is a tensor with a shape: (number of inputs) x (input height) x (input width) x (input channels). After passing through a convolutional layer, the image becomes abstracted to a feature map, also called an activation map, with shape: (number of inputs) x (feature map height) x (feature map width) x (feature map channels). 
+		<br><br>
+		Convolutional layers convolve the input and pass its result to the next layer. This is similar to the response of a neuron in the visual cortex to a specific stimulus. Each convolutional neuron processes data only for its receptive field. Although fully connected feedforward neural networks can be used to learn features and classify data, this architecture is generally impractical for larger inputs such as high-resolution images. It would require a very high number of neurons, even in a shallow architecture, due to the large input size of images, where each pixel is a relevant input feature. For instance, a fully connected layer for a (small) image of size 100 x 100 has 10,000 weights for each neuron in the second layer. Instead, convolution reduces the number of free parameters, allowing the network to be deeper. For example, regardless of image size, using a 5 x 5 tiling region, each with the same shared weights, requires only 25 learnable parameters. Using regularized weights over fewer parameters avoids the vanishing gradients and exploding gradients problems seen during backpropagation in traditional neural networks. Furthermore, convolutional neural networks are ideal for data with a grid-like topology (such as images) as spatial relations between separate features are taken into account during convolution and for pooling. 
+		<br><br>
+		<h2>Pooling Layers</h2>
+		<br>
+		<span style="width: 100px;display: inline-block;"></span>Convolutional networks may include local and/or global pooling layers along with traditional convolutional layers. Pooling layers reduce the dimensions of data by combining the outputs of neuron clusters at one layer into a single neuron in the next layer. Local pooling combines small clusters, tiling sizes such as 2 x 2 are commonly used. Global pooling acts on all the neurons of the feature map.[18][19] There are two common types of pooling in popular use: max and average. Max pooling uses the maximum value of each local cluster of neurons in the feature map,[20][21] while average pooling takes the average value.
+		<br><br>
+		<h2>ReLu Layer</h2>
+		<br>
+		<span style="width: 100px;display: inline-block;"></span>ReLU is the abbreviation of rectified linear unit, which applies the nonsaturating activation function f(x)=max (0, x). It effectively removes negative values from an activation map by setting them to zero.[69] It introduces nonlinearities to the decision function and in the overall network without affecting the receptive fields of the convolution layers.
+		<br><br>
+		<h2>Fully Connected network</h2>
+		<br>
+		<span style="width: 100px;display: inline-block;"></span>After several convolutional and max pooling layers, the final classification is done via fully connected layers. Neurons in a fully connected layer have connections to all activations in the previous layer, as seen in regular (non-convolutional) artificial neural networks. Their activations can thus be computed as an affine transformation, with matrix multiplication followed by a bias offset (vector addition of a learned or fixed bias term). 
+		<br><br>
+		<h2>Softmax Function</h2>
+		<br>
+		<span style="width: 100px;display: inline-block;"></span>The Softmax loss function is used for predicting a single class of K mutually exclusive classes. Sigmoid cross-entropy loss is used for predicting K independent probability values in [0,1]. Euclidean loss is used for regressing to real-valued labels (-∞, ∞).
+		<br><br>
+		<h2>Loss Layer</h2>
+		<br>
+		<span style="width: 100px;display: inline-block;"></span>The "loss layer", or "loss function", specifies how training penalizes the deviation between the predicted output of the network, and the true data labels (during supervised learning). Various loss functions can be used, depending on the specific task.
+	</div>
+</body>
+</html>
+

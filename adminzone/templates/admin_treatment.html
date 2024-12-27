@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet'>
+	<title>Diabetic Retinopathy</title>
+	<style>
+		*{
+			margin: 0;
+		}
+		body{
+			/*background: linear-gradient(to top right, #6600ff 0%, #ff99cc 100%);*/
+			height: fit-content;
+			font-family: 'Rubik';
+			border: 1px solid transparent; box-sizing: border-box;
+		}
+		.header{
+			height: 50px;
+			width: 100%;
+			line-height: 50px;
+			padding: 0 10%;
+			box-sizing: border-box;
+			font-size: 30px;
+			font-weight: bolder;
+			position: fixed;
+			/*background-color: purple;*/
+			/*box-shadow: 1px 1px purple;*/
+			/*box-shadow: 20px 20px 50px 10px pink inset;*/
+			box-shadow: 1px 1px 20px 1px #ff99cc;
+			background-color: white;
+			z-index: 10;
+		}
+		ul{
+			list-style-type: none;
+			width: fit-content;
+			float: right;
+			/*margin-right: 50px;*/
+		}
+		li{
+			font-size: 20px;
+			display: inline-block;
+			width: fit-content;
+			margin-left: 20px;
+		}
+		li a{
+			text-decoration: none;
+			color: black;
+		}
+		.body{
+			/*height: fit-content;*/
+			height: fit-content;
+			width: 80%;
+			margin: 0px auto;
+			margin-top: 80px;
+			background-color: whitesmoke;
+			box-shadow: 1px 1px 20px 1px #00000033;
+			position: relative;
+			font-size: 20px;
+			padding: 5%;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<!-- <div class="header"></div> -->
+	<div class="header">
+		Diabetic Retinopathy
+		<ul>
+			<li><a href="{% url 'adminzone:admin_index' %}">Home</a></li>
+			<li><a href="{% url 'adminzone:admin_about' %}">About</a></li>
+			<li><a href="{% url 'adminzone:admin_treatment' %}">Treatment</a></li>
+			<li><a href="{% url 'adminzone:admin_project' %}">Project</a></li>
+			<li><a href="{% url 'adminzone:admin_signout' %}">Logout</a></li>
+		</ul>
+	</div>
+	<div class="body">
+		<h2>What causes diabetic retinopathy?</h2>
+		<br>
+		Eye doctors can check for diabetic retinopathy as part of a dilated eye exam. The exam is simple and painless — your doctor will give you some eye drops to dilate (widen) your pupil and then check your eyes for diabetic retinopathy and other eye problems.
+		<br><br>
+		If you have diabetes, it’s very important to get regular eye exams. If you do develop diabetic retinopathy, early treatment can stop the damage and prevent blindness.  
+		<br><br>
+		If your eye doctor thinks you may have severe diabetic retinopathy or DME, they may do a test called a fluorescein angiogram. This test lets the doctor see pictures of the blood vessels in your retina. 
+	</div>
+	<div class="body">
+		<h2>What can I do to prevent diabetic retinopathy?</h2>
+		<br>
+		Managing your diabetes is the best way to lower your risk of diabetic retinopathy. That means keeping your blood sugar levels in a healthy range. You can do this by getting regular physical activity, eating healthy, and carefully following your doctor’s instructions for your insulin or other diabetes medicines.
+		<br><br>
+		To make sure your diabetes treatment plan is working, you’ll need a special lab test called an A1C test. This test shows your average blood sugar level over the past 3 months. You can work with your doctor to set a personal A1C goal. Meeting your A1C goal can help prevent or manage diabetic retinopathy.
+		<br><br>
+		Having high blood pressure or high cholesterol along with diabetes increases your risk for diabetic retinopathy. So controlling your blood pressure and cholesterol can also help lower your risk for vision loss.
+	</div>
+	<div class="body">
+		<h2>What’s the treatment for diabetic retinopathy and DME?</h2>
+		<br>
+		In the early stages of diabetic retinopathy, your eye doctor will probably just keep track of how your eyes are doing. Some people with diabetic retinopathy may need a comprehensive dilated eye exam as often as every 2 to 4 months.
+		<br><br>
+		In later stages, it’s important to start treatment right away — especially if you have changes in your vision. While it won’t undo any damage to your vision, treatment can stop your vision from getting worse. It’s also important to take steps to control your diabetes, blood pressure, and cholesterol. 
+		<!-- <br><br>
+		Having high blood pressure or high cholesterol along with diabetes increases your risk for diabetic retinopathy. So controlling your blood pressure and cholesterol can also help lower your risk for vision loss. -->
+	</div>
+</body>
+</html>
+

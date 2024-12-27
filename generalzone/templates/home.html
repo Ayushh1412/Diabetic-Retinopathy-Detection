@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+    .button {
+        display: inline-block; /* Make it behave like a button */
+        padding: 10px 20px; /* Add padding for the button's size */
+        background-color: #007bff; /* Button background color */
+        color: white; /* Button text color */
+        text-align: center; /* Center the text inside the button */
+        text-decoration: none; /* Remove the underline from the link */
+        border-radius: 5px; /* Rounded corners */
+        font-size: 16px; /* Text size */
+        transition: background-color 0.3s; /* Smooth transition for hover effect */
+    }
+    
+    .button:hover {
+        background-color: #0056b3; /* Darker background color on hover */
+    }
+    </style>
+</head>
+<body>
+   <div>
+    <h1>Welcome to Our Project</h1>
+    <h2>By Ayush Kumar <br> & Ishita Pandey</h2>
+    <a href="{% url 'generalzone:index' %}" class="button">Open Project</a>
+   </div> 
+</body>
+</html>

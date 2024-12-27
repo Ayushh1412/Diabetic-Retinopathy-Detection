@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet'>
+	<title>Diabetic Retinopathy</title>
+	<style>
+		*{
+			margin: 0;
+		}
+		body{
+			/*background: linear-gradient(to top right, #6600ff 0%, #ff99cc 100%);*/
+			height: fit-content;
+			font-family: 'Rubik';
+			border: 1px solid transparent; box-sizing: border-box;
+		}
+		.header{
+			height: 50px;
+			width: 100%;
+			line-height: 50px;
+			padding: 0 10%;
+			box-sizing: border-box;
+			font-size: 30px;
+			font-weight: bolder;
+			position: fixed;
+			/*background-color: purple;*/
+			/*box-shadow: 1px 1px purple;*/
+			/*box-shadow: 20px 20px 50px 10px pink inset;*/
+			box-shadow: 1px 1px 20px 1px #ff99cc;
+			background-color: white;
+			z-index: 10;
+		}
+		ul{
+			list-style-type: none;
+			width: fit-content;
+			float: right;
+			/*margin-right: 50px;*/
+		}
+		li{
+			font-size: 20px;
+			display: inline-block;
+			width: fit-content;
+			margin-left: 20px;
+		}
+		li a{
+			text-decoration: none;
+			color: black;
+		}
+		.body{
+			/*height: fit-content;*/
+			height: fit-content;
+			width: 80%;
+			margin: 0px auto;
+			margin-top: 80px;
+			background-color: whitesmoke;
+			box-shadow: 1px 1px 20px 1px #00000033;
+			position: relative;
+			font-size: 20px;
+			padding: 5%;
+			box-sizing: border-box;
+		}
+		.btn{
+			background-color: #3fc;
+			border-radius: 20px;
+			width: 150px;
+			height: 35px;
+			margin: 0 auto;
+			text-align: center;
+			border: none;
+			cursor: pointer;
+			font-size: 20px;
+			/* box-sizing: content-box; */
+			display: block;
+			/* margin: 10px auto; */
+		}
+		label {
+			background: linear-gradient(to top right, #6600ff 0%, #ff99cc 100%);
+			color: white;
+			padding: 0.5rem;
+			font-family: sans-serif;
+			border-radius: 0.3rem;
+			cursor: pointer;
+			margin-top: 1rem;
+			font-size: 18px;
+			border-radius: 25px;
+		}
+	</style>
+</head>
+<body>
+	<!-- <div class="header"></div> -->
+	<div class="header">
+		Diabetic Retinopathy
+		<ul>
+			<ul>
+				<li><a href="{% url 'adminzone:admin_index' %}">Home</a></li>
+				<li><a href="{% url 'adminzone:admin_about' %}">About</a></li>
+				<li><a href="{% url 'adminzone:admin_treatment' %}">Treatment</a></li>
+				<li><a href="{% url 'adminzone:admin_project' %}">Project</a></li>
+				<li><a href="{% url 'adminzone:admin_signout' %}">Logout</a></li>
+			</ul>
+		</ul>
+	</div>
+	<div class="body">
+		<h3 style="text-align: center;">Upload image to get the result</h3>
+		<br>
+		<form action="{% url 'adminzone:predict' %}" method="post" enctype="multipart/form-data">
+			{% csrf_token %}
+			<input type="file" id="actual-btn" name="image" hidden/>
+
+			<!-- our custom upload button -->
+			<label for="actual-btn">Choose File</label>
+
+			<!-- name of file chosen -->
+			<span id="file-chosen">No file chosen</span>
+		<br>
+		<br>
+		<br>
+		<input type="submit" value="Submit" class="btn">
+		</form>
+	</div>
+	<script>
+		const actualBtn = document.getElementById('actual-btn');
+
+		const fileChosen = document.getElementById('file-chosen');
+
+		actualBtn.addEventListener('change', function(){
+			fileChosen.textContent = this.files[0].name;
+		})
+	</script>
+</body>
+</html>
+

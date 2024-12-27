@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet'>
+	<title>Diabetic Retinopathy</title>
+	<style>
+		*{
+			margin: 0;
+		}
+		body{
+			/*background: linear-gradient(to top right, #6600ff 0%, #ff99cc 100%);*/
+			height: fit-content;
+			font-family: 'Rubik';
+			border: 1px solid transparent; box-sizing: border-box;
+		}
+		.header{
+			height: 50px;
+			width: 100%;
+			line-height: 50px;
+			padding: 0 10%;
+			box-sizing: border-box;
+			font-size: 30px;
+			font-weight: bolder;
+			position: fixed;
+			/*background-color: purple;*/
+			/*box-shadow: 1px 1px purple;*/
+			/*box-shadow: 20px 20px 50px 10px pink inset;*/
+			box-shadow: 1px 1px 20px 1px #ff99cc;
+			background-color: white;
+			z-index: 10;
+		}
+		ul{
+			list-style-type: none;
+			width: fit-content;
+			float: right;
+			/*margin-right: 50px;*/
+		}
+		li{
+			font-size: 20px;
+			display: inline-block;
+			width: fit-content;
+			margin-left: 20px;
+		}
+		li a{
+			text-decoration: none;
+			color: black;
+		}
+		.body{
+			/*height: fit-content;*/
+			height: fit-content;
+			width: 80%;
+			margin: 0px auto;
+			margin-top: 80px;
+			background-color: whitesmoke;
+			box-shadow: 1px 1px 20px 1px #00000033;
+			position: relative;
+			font-size: 20px;
+			padding: 5%;
+			box-sizing: border-box;
+		}
+		.button {
+        display: inline-block; /* Make it behave like a button */
+        padding: 10px 20px; /* Add padding for the button's size */
+        background-color: #007bff; /* Button background color */
+        color: white; /* Button text color */
+        text-align: center; /* Center the text inside the button */
+        text-decoration: none; /* Remove the underline from the link */
+        border-radius: 5px; /* Rounded corners */
+        font-size: 16px; /* Text size */
+        transition: background-color 0.3s; /* Smooth transition for hover effect */
+    }
+    
+    .button:hover {
+        background-color: #0056b3; /* Darker background color on hover */
+    }
+	</style>
+</head>
+<body>
+	<!-- <div class="header"></div> -->
+	<div class="header">
+		Diabetic Retinopathy
+		<ul>
+			<li><a href="{% url 'generalzone:index' %}">Home</a></li>
+			<li><a href="{% url 'generalzone:about' %}">About</a></li>
+			<li><a href="{% url 'generalzone:treatment' %}">Treatment</a></li>
+			<li><a href="{% url 'generalzone:project' %}">Project</a></li>
+			<li><a href="{% url 'generalzone:login' %}">Login</a></li>
+		</ul>
+	</div>
+	<div class="body">
+		<header>
+			<h2>Diabetic Retinopathy Detection</h2>
+			<p>AI-powered Detection to Help diagnose Diabetic Retinopathy</p>
+		</header>
+		<br>
+		<div>
+            <h2>What is Diabetic Retinopathy?</h2>
+            <p>Diabetic Retinopathy is a diabetes-related eye disease that can cause vision loss. Early detection is crucial for preventing blindness. Our system uses advanced AI and image processing techniques to detect signs of diabetic retinopathy from retinal images.</p>
+        </div>
+		<br>
+		<div>
+            <h2>How It Works</h2>
+            <p>Our AI-powered system analyzes images of the retina, looking for signs of diabetic retinopathy. Once detected, the severity of the disease is classified to help doctors make more informed decisions about patient care.</p>
+        </div>
+		<br>
+		<div>
+            <h2>Get Started</h2>
+            <p>Upload an image of the retina to our system to get an instant diagnosis and the severity level of diabetic retinopathy.</p>
+			<br>
+            <a href="{% url 'generalzone:login' %}" class="button">Try it</a>
+        </div>
+</body>
+</html>
+
